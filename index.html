@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleButton.textContent = document.body.classList.contains('dark-mode') 
+      ? '☀️ Thème clair' 
+      : '🌙 Thème sombre';
+  });
+</script>
+
 <body>
   <header>
     <nav>
@@ -16,7 +26,9 @@
         <li><a href="perso.html">Perso</a></li>
         <li><a href="taff.html">Taff</a></li>
       </ul>
-      <button id="toggle-theme">Changer de thème</button>
+      <button id="theme-toggle" class="theme-btn">
+        🌙 Changer de thème
+      </button>
     </nav>
   </header>
   <main>

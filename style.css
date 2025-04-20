@@ -86,3 +86,23 @@ body.light-mode nav ul li a {
 body.light-mode nav ul li a:hover {
   color: #555;
 }
+.theme-btn {
+  background-color: #444;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.theme-btn:hover {
+  background-color: #666;
+  transform: scale(1.05);
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
