@@ -47,7 +47,23 @@
   </style>
 </head>
 <body>
-  <div class="auth-container">
+    <div id="auth-zone" class="auth-container">
+        <h2>Accès privé 🔒</h2>
+        <p>Entre le code secret pour lire mes poèmes</p>
+        <input type="password" id="password" placeholder="Code d'accès">
+        <br>
+        <button onclick="checkPassword()">Entrer</button>
+      </div>
+      
+      <div id="poeme-content" style="display: none;">
+        <h3>🌒 Poème #1 - L'ombre et la plume</h3>
+        <p>
+          Dans le silence obscur où dansent les pensées,<br>
+          S'écrit l’écho discret d’une âme insensée...<br>
+          <!-- D'autres poèmes ici -->
+        </p>
+      </div>
+      
     <h2>Accès privé 🔒</h2>
     <p>Entre le code secret pour lire mes poèmes</p>
     <input type="password" id="password" placeholder="Code d'accès">
@@ -67,13 +83,17 @@
   <script>
     function checkPassword() {
       const pass = document.getElementById("password").value;
+      const authZone = document.getElementById("auth-zone");
       const content = document.getElementById("poeme-content");
-      if (pass === "alexandrie") { // 🔑 Mot de passe à changer
-        content.style.display = "block";
+  
+      if (pass === "alexandrie") {
+        authZone.style.display = "none";       // cache le formulaire
+        content.style.display = "block";       // affiche les poèmes
       } else {
         alert("Mauvais code, l’ombre te cache encore 🕯️");
       }
     }
   </script>
+  
 </body>
 </html>
