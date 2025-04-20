@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Poèmes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .auth-container {
+      max-width: 400px;
+      margin: 100px auto;
+      background: #2b2b2b;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    input[type="password"] {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      width: 80%;
+    }
+
+    button {
+      background: #444;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #666;
+    }
+
+    #poeme-content {
+      display: none;
+      margin-top: 2rem;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <h2>Accès privé 🔒</h2>
+    <p>Entre le code secret pour lire mes poèmes</p>
+    <input type="password" id="password" placeholder="Code d'accès">
+    <br>
+    <button onclick="checkPassword()">Entrer</button>
+
+    <div id="poeme-content">
+      <h3>🌒 Poème #1 - L'ombre et la plume</h3>
+      <p>
+        Dans le silence obscur où dansent les pensées,<br>
+        S'écrit l’écho discret d’une âme insensée...<br>
+        <!-- Tu pourras en ajouter plein d'autres ici -->
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pass = document.getElementById("password").value;
+      const content = document.getElementById("poeme-content");
+      if (pass === "alexandrie") { // 🔑 Mot de passe à changer
+        content.style.display = "block";
+      } else {
+        alert("Mauvais code, l’ombre te cache encore 🕯️");
+      }
+    }
+  </script>
+</body>
+</html>
