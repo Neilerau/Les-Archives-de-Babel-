@@ -2,8 +2,40 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Association</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statuts de l'Association</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    main.article-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      color: #333;
+    }
+    main.article-container h2 {
+      text-align: center;
+      margin-top: 2rem;
+      color: #2c3e50;
+    }
+    main.article-container p,
+    main.article-container ul {
+      text-align: justify;
+      line-height: 1.6;
+      margin-top: 1rem;
+    }
+    main.article-container ul {
+      list-style: disc inside;
+    }
+    main.article-container em,
+    main.article-container strong {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -12,7 +44,7 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="taff.html">Taff</a></li>
-        <li><a href="hobbies/hobbies.html">Hobbies</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
         <li><a href="poemes.html">Poèmes</a></li>
         <li><a href="association.html" class="active">🏛 Association</a></li>
       </ul>
@@ -20,13 +52,62 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Statuts de l'Association</h2>
-    <p>Article 1 – Dénomination ... (contenu résumé)</p>
-    <!-- Place ici tous les articles complets comme tu le veux -->
+  <main class="article-container">
+    <h2>Article 1 – Dénomination</h2>
+    <p>Il est fondé entre les adhérents aux présents statuts une association régie par la loi du 1er juillet 1901, ayant pour titre : « [Nom de l'association] ».</p>
+
+    <h2>Article 2 – Objet</h2>
+    <p>L’association a pour objet de favoriser la réflexion, l’expression et l’action politique citoyenne. Elle vise à organiser des débats, des rencontres, des publications, et toute autre activité contribuant à l’animation démocratique, à l’éducation populaire et à la participation à la vie publique.</p>
+
+    <h2>Article 3 – Siège social</h2>
+    <p>Le siège social est fixé à : Mairie de Champs-sur-Marne, Mail Jean-Ferrat, 77420 Champs-sur-Marne. Il pourra être transféré par simple décision du bureau. La ratification par l’assemblée générale sera nécessaire.</p>
+
+    <h2>Article 4 – Durée</h2>
+    <p>La durée de l’association est illimitée.</p>
+
+    <h2>Article 5 – Membres</h2>
+    <ul>
+      <li>Membres fondateurs</li>
+      <li>Membres actifs</li>
+    </ul>
+
+    <h2>Article 6 – Admission</h2>
+    <p>L’adhésion est ouverte à toute personne partageant les valeurs de l’association. L’adhésion devient effective après acceptation par le bureau et paiement éventuel d’une cotisation fixée annuellement.</p>
+
+    <h2>Article 7 – Radiation</h2>
+    <p>La qualité de membre se perd :</p>
+    <ul>
+      <li>Par démission</li>
+      <li>Par exclusion pour motif grave, décidée par le bureau</li>
+      <li>Par non-paiement de la cotisation (le cas échéant)</li>
+    </ul>
+
+    <h2>Article 8 – Ressources</h2>
+    <ul>
+      <li>Les cotisations</li>
+      <li>Les dons manuels</li>
+      <li>Les subventions éventuelles</li>
+      <li>Toute autre ressource autorisée par la loi</li>
+    </ul>
+
+    <h2>Article 9 – Bureau</h2>
+    <p>L’association est dirigée par un bureau composé au minimum : un.e président.e et un.e trésorier.e. Éventuellement : un.e secrétaire peut être désigné.e. Les membres du bureau sont élus pour 1 an, renouvelable. Ils sont rééligibles.</p>
+
+    <h2>Article 10 – Assemblée générale</h2>
+    <p>L’assemblée générale ordinaire se réunit au moins une fois par an. Elle approuve les rapports, vote le budget, et renouvelle le bureau.</p>
+
+    <h2>Article 11 – Assemblée générale extraordinaire</h2>
+    <p>Peut être convoquée à la demande d’un tiers des membres ou du bureau pour modifier les statuts ou dissoudre l’association.</p>
+
+    <h2>Article 12 – Dissolution</h2>
+    <p>En cas de dissolution, un ou plusieurs liquidateurs sont nommés par l’AG. L’actif net, s’il y en a, sera attribué à une association poursuivant des buts similaires.</p>
+
+    <em>Fait à Champs-sur-Marne, le [date]</em>
+    <strong>Signatures des membres fondateurs :</strong>
+    <p>[Nom 1]<br/>[Nom 2]<br/>[…]</p>
   </main>
 
-  <footer><p>© 2025 - MonSite</p></footer>
+  <footer><p>© 2025 – MonSite</p></footer>
 
   <script>
     const toggleButton = document.getElementById('theme-toggle');
@@ -37,7 +118,6 @@
         : '🌙 Changer de thème';
       localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
-
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
