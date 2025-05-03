@@ -91,3 +91,9 @@ body.dark-mode nav ul li a {
 body.dark-mode nav ul li a:hover {
   color: #555;
 }
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
