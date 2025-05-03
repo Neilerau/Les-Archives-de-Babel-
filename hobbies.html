@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Accueil</title>
+  <title>Hobbies</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,7 +12,7 @@
       <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="taff.html">Taff</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="hobbies.html" class="active">Hobbies</a></li>
         <li><a href="poemes.html">Poèmes</a></li>
         <li><a href="association.html">🏛 Association</a></li>
       </ul>
@@ -21,8 +21,11 @@
   </header>
 
   <main>
-    <h2>Bienvenue sur mon site</h2>
-    <p>Ceci est la page d'accueil. Explorez les rubriques !</p>
+    <h2>Mes Hobbies</h2>
+    <ul>
+      <li><a href="hobbies/tcg/pokemon.html">TCG – Pokémon</a></li>
+      <!-- tu peux ajouter d'autres sous-cat ici -->
+    </ul>
   </main>
 
   <footer><p>© 2025 - MonSite</p></footer>
@@ -36,7 +39,6 @@
         : '🌙 Changer de thème';
       localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
-
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-mode');
