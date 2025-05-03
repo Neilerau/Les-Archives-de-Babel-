@@ -1,101 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Poèmes</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .auth-container {
-      max-width: 400px;
-      margin: 100px auto;
-      background: #2b2b2b;
-      color: #fff;
-      padding: 2rem;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    }
-
-    input[type="password"] {
-      padding: 0.5rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      width: 80%;
-    }
-
-    button {
-      background: #444;
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background: #666;
-    }
-
-    #poeme-content {
-      display: none;
-      margin-top: 2rem;
-      text-align: left;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div id="auth-zone" class="auth-container">
-        <h2>Accès privé 🔒</h2>
-        <p>Entre le code secret pour lire mes poèmes</p>
-        <input type="password" id="password" placeholder="Code d'accès">
-        <br>
-        <button onclick="checkPassword()">Entrer</button>
-      </div>
-      
-      <div id="poeme-content" style="display: none;">
+  <header>
+    <nav>
+      <h1>Mon Site</h1>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="taff.html">Taff</a></li>
+        <li><a href="hobbies/hobbies.html">Hobbies</a></li>
+        <li><a href="poemes.html" class="active">Poèmes</a></li>
+        <li><a href="association.html">🏛 Association</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-btn">🌙 Changer de thème</button>
+    </nav>
+  </header>
 
-        <section>
-          <h3>🌒 Poème #1 - L'ombre et la plume</h3>
-          <p>
-            Dans le silence obscur où dansent les pensées,<br>
-            S'écrit l’écho discret d’une âme insensée...
-          </p>
-        </section>
-      
-        <hr style="margin: 2rem 0; border: none; border-top: 1px solid #555;">
-      
-        <section>
-          <h3>🪶 Prose – *Le corps et le temps*</h3>
-          <p style="white-space: pre-line;">
-            Mon corps apparait l’indélébile, à la fois ce dont certain méprise la trace et ce que d’autre revendique.  
-            Des blessures et douleurs, cela va de soi, de nombreux tar au cœur, en a-t-on eu le choix ?  
-            Escargot ou guépard, sa complexe relativité interroge nos passions. Doit-on en faire un ennemi ou un compagnon ?  
-            Ennemi, il cherche à me nuire, les rides, les regrets, la mélancolie se hisseront comme le plus grand obstacle à sa propre magnificence.  
-            Compagnon, il sera le plus fidèle de tous, intransigeant mais réconfortant, en ça réside sa plus grande dichotomie.  
-            Dans sa main se trouve une arme, il vous laisse le choix d’accepter sa sentence, mon choix est fait il ne me reste plus qu’à me rhabiller.
-          </p>
-        </section>
-      
-      </div>
-  </div>
+  <main>
+    <div id="auth-zone">
+      <h2>Accès Poèmes</h2>
+      <input type="password" id="password" placeholder="Code d'accès" />
+      <button onclick="checkPassword()">Entrer</button>
+    </div>
+
+    <div id="poeme-content" style="display:none;">
+      <h3>🌒 Poème #1 - L'ombre et la plume</h3>
+      <p>...</p>
+
+      <h3>🪶 Prose – Le corps et le temps</h3>
+      <p>Mon corps apparait l’indélébile, ...</p>
+    </div>
+  </main>
+
+  <footer><p>© 2025 - MonSite</p></footer>
 
   <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode')
+        ? '☀️ Thème clair'
+        : '🌙 Changer de thème';
+      localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.body.classList.add('dark-mode');
+        toggleButton.textContent = '☀️ Thème clair';
+      }
+    });
+
     function checkPassword() {
       const pass = document.getElementById("password").value;
-      const authZone = document.getElementById("auth-zone");
-      const content = document.getElementById("poeme-content");
-  
       if (pass === "alexandrie") {
-        authZone.style.display = "none";       // cache le formulaire
-        content.style.display = "block";       // affiche les poèmes
+        document.getElementById("auth-zone").style.display = "none";
+        document.getElementById("poeme-content").style.display = "block";
       } else {
-        alert("Mauvais code, l’ombre te cache encore 🕯️");
+        alert("Mauvais code");
       }
     }
   </script>
-  
 </body>
 </html>
